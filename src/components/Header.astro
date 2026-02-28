@@ -2,11 +2,6 @@
 import westgate from '../assets/westgate.png';
 ---
 <section>
-  <div class="shimmer-circle circle-1"></div>
-  <div class="shimmer-circle circle-2"></div>
-  <div class="shimmer-circle circle-3"></div>
-  <div class="shimmer-circle circle-4"></div>
-  <div class="shimmer-circle circle-5"></div>
   <img src={westgate.src} alt="Westgate School" />
 </section>
 
@@ -21,94 +16,6 @@ import westgate from '../assets/westgate.png';
     position: relative;
     z-index: 1;
     margin: 0 auto;
-    max-width: clamp(200px, 60vw, 600px);
-  }
-
-  .shimmer-circle {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(30px);
-    opacity: 0;
-    z-index: 0;
-  }
-
-  .circle-1 {
-    width: 55vw;
-    height: 55vw;
-    background: radial-gradient(circle, #FF8EC4 0%, #FF69B4 60%, #FF85C8 100%);
-    top: -10%;
-    left: -15%;
-    animation: shimmer1 7s ease-in-out infinite alternate;
-  }
-
-  .circle-2 {
-    width: 45vw;
-    height: 45vw;
-    background: radial-gradient(circle, #81D4FA 0%, #4FC3F7 60%, #29B6F6 100%);
-    top: -5%;
-    right: -10%;
-    animation: shimmer2 9s ease-in-out infinite alternate;
-  }
-
-  .circle-3 {
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, #AED581 0%, #9CCC65 60%, #8BC34A 100%);
-    bottom: -15%;
-    left: 15%;
-    animation: shimmer3 8s ease-in-out infinite alternate;
-  }
-
-  .circle-4 {
-    width: 50vw;
-    height: 50vw;
-    background: radial-gradient(circle, #CE93D8 0%, #BA68C8 60%, #AB47BC 100%);
-    top: 30%;
-    left: -10%;
-    animation: shimmer4 10s ease-in-out infinite alternate;
-  }
-
-  .circle-5 {
-    width: 45vw;
-    height: 45vw;
-    background: radial-gradient(circle, #FFCC80 0%, #FFB74D 60%, #FFA726 100%);
-    bottom: -10%;
-    right: -8%;
-    animation: shimmer5 6s ease-in-out infinite alternate;
-  }
-
-  @keyframes shimmer1 {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
-    33% { transform: translate(30px, 20px) scale(1.2); opacity: 0.95; }
-    66% { transform: translate(-20px, 30px) scale(0.9); opacity: 0.6; }
-    100% { transform: translate(-25px, -10px) scale(1.1); opacity: 0.85; }
-  }
-
-  @keyframes shimmer2 {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.65; }
-    33% { transform: translate(-25px, 30px) scale(1.15); opacity: 0.9; }
-    66% { transform: translate(20px, -20px) scale(1.25); opacity: 0.7; }
-    100% { transform: translate(15px, 25px) scale(0.9); opacity: 0.95; }
-  }
-
-  @keyframes shimmer3 {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-    33% { transform: translate(25px, -25px) scale(1.2); opacity: 0.9; }
-    66% { transform: translate(-30px, 15px) scale(0.85); opacity: 0.75; }
-    100% { transform: translate(10px, 20px) scale(1.15); opacity: 0.95; }
-  }
-
-  @keyframes shimmer4 {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-    33% { transform: translate(20px, 25px) scale(1.25); opacity: 0.95; }
-    66% { transform: translate(-15px, -20px) scale(0.9); opacity: 0.65; }
-    100% { transform: translate(-25px, 15px) scale(1.1); opacity: 0.9; }
-  }
-
-  @keyframes shimmer5 {
-    0% { transform: translate(0, 0) scale(1); opacity: 0.65; }
-    33% { transform: translate(-20px, -25px) scale(1.2); opacity: 0.9; }
-    66% { transform: translate(25px, 20px) scale(1.15); opacity: 0.7; }
-    100% { transform: translate(-10px, 30px) scale(0.9); opacity: 0.95; }
+    max-width: clamp(300px, 60vw, 600px);
   }
 </style>
