@@ -4,7 +4,68 @@
   <div class="circle circle-3"></div>
   <div class="circle circle-4"></div>
   <div class="circle circle-5"></div>
+
+  <div class="stars">
+    <svg class="star star-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="currentColor"/></svg>
+    <svg class="star star-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="currentColor"/></svg>
+    <svg class="star star-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="currentColor"/></svg>
+    <svg class="star star-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="currentColor"/></svg>
+    <svg class="star star-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="currentColor"/></svg>
+    <svg class="star star-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="currentColor"/></svg>
+    <svg class="star star-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="currentColor"/></svg>
+    <svg class="star star-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="currentColor"/></svg>
+  </div>
 </section>
+
+<script>
+  const section = document.querySelector('.stars')?.closest('section');
+  const starsEl = document.querySelectorAll<SVGSVGElement>('.star');
+
+  const starConfig = [
+    { orbit: 0.30, speed: 0.00005, angle: 0 },
+    { orbit: 0.38, speed: -0.00004, angle: 0.785 },
+    { orbit: 0.25, speed: 0.00006, angle: 1.571 },
+    { orbit: 0.42, speed: -0.00003, angle: 2.356 },
+    { orbit: 0.33, speed: 0.000045, angle: 3.142 },
+    { orbit: 0.40, speed: -0.000035, angle: 3.927 },
+    { orbit: 0.28, speed: 0.000055, angle: 4.712 },
+    { orbit: 0.36, speed: -0.000042, angle: 5.498 },
+  ];
+
+  let condense = 0;
+
+  function onScroll() {
+    if (!section) return;
+    const rect = section.getBoundingClientRect();
+    const containerW = section.offsetWidth || 1;
+    const scrolled = Math.max(0, -rect.top);
+    condense = Math.min(1, scrolled / containerW * 1.5);
+  }
+
+  let lastTime = 0;
+  function animate(time: number) {
+    const dt = lastTime ? time - lastTime : 16;
+    lastTime = time;
+
+    if (!section) { requestAnimationFrame(animate); return; }
+    const containerW = section.offsetWidth;
+
+    starsEl.forEach((star, i) => {
+      const cfg = starConfig[i];
+      cfg.angle += cfg.speed * dt;
+      const radius = cfg.orbit * containerW * (1 - condense * 0.85);
+      const x = Math.cos(cfg.angle) * radius;
+      const y = Math.sin(cfg.angle) * radius;
+      star.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  requestAnimationFrame(animate);
+</script>
 
 <style>
   section {
@@ -12,6 +73,31 @@
     inset: 0;
     z-index: -1;
   }
+
+  .stars {
+    position: absolute;
+    top: 40cqi;
+    left: 50%;
+    width: 0;
+    height: 0;
+    z-index: 0;
+  }
+
+  .star {
+    position: absolute;
+    filter: drop-shadow(0 0 4px var(--colour));
+    will-change: transform;
+    color: var(--colour);
+  }
+
+  .star-1 { width: 5cqi; height: 5cqi; --colour: #FFD54F; }
+  .star-2 { width: 7cqi; height: 7cqi; --colour: #FF8A80; }
+  .star-3 { width: 4cqi; height: 4cqi; --colour: #80D8FF; }
+  .star-4 { width: 6cqi; height: 6cqi; --colour: #B9F6CA; }
+  .star-5 { width: 5cqi; height: 5cqi; --colour: #EA80FC; }
+  .star-6 { width: 3cqi; height: 3cqi; --colour: #FFE082; }
+  .star-7 { width: 6cqi; height: 6cqi; --colour: #FF80AB; }
+  .star-8 { width: 4cqi; height: 4cqi; --colour: #84FFFF; }
 
   .circle {
     position: absolute;
