@@ -2,11 +2,9 @@
   <div class="marquee">
   <h2><span>Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span></h2>
   </div>
-  <ul class="kids-and-parents">
+  <ul>
     <li><h3>9-10am</h3> <p>Assembly (arrival between 8:45 and 8:55am) </p><span class="audience">Kids and Parents</span></li>
     <li><h3>10-10:30am</h3> <p>Pics with parents (in gym and outside on North side of school)</p><span class="audience">Kids and Parents</span></li>
-  </ul>
-  <ul class="kids-only">
     <li><h3>10:30-11:30am</h3> <p>Snack (kids bring themselves, organize backpacks and leave personal items in classroom) and games (if it's nice outside, spike ball, Jenga, nine square / if it's raining, we will transfer to the gym)  </p><span class="audience">Kids Only</span></li>
     <li><h3>11:30am-1:30pm</h3> <p>Dance / Pizza / Candy Concession (includes vegetarian and cheese pizzas)</p><span class="audience">Kids Only</span></li>
     <li><h3>1:30-2:30pm</h3> <p>Outdoor Games / Water fight  (please bring towel and change of clothes)</p><span class="audience">Kids Only</span></li>
@@ -23,7 +21,11 @@
   .marquee {
     background-color: #000;
     padding: 1.5em 0;
-    font-size: clamp(0.5rem, 2vw, 1.25rem);
+    font-size: clamp(0.5rem, 1.6vw, 1rem);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   h2 {
@@ -59,7 +61,7 @@
   }
 
   h3 {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 400;
     font-style: normal;
     font-family: "DM Sans", serif;
@@ -72,6 +74,17 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .audience {
+    background-color: #fff;
+    color: #000;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-size: 0.875em;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: inline-block;
   }
 
   @keyframes marquee {
