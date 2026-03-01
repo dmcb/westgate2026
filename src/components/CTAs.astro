@@ -16,7 +16,7 @@
     font-family: "Bevan", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: clamp(1rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 5vw, 3rem);
     margin: 0;
 
   }
@@ -40,10 +40,15 @@
     align-items: center;
     gap: 0.6em;
     text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
   }
 
   .actions a:hover {
-    background-color: #07733d;
+    transform: scale(1.1);
+  }
+
+  .actions a:active {
+    transform: scalex(1.2) scaley(.98);
   }
 </style>
