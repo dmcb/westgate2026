@@ -53,7 +53,7 @@
     starsEl.forEach((star, i) => {
       const cfg = starConfig[i];
       cfg.angle += cfg.speed * dt;
-      const radius = cfg.orbit * containerW * (1 - condense * 0.85);
+      const radius = cfg.orbit * 1.2 * containerW * (1 - condense * 0.85);
       const x = Math.cos(cfg.angle) * radius;
       const y = Math.sin(cfg.angle) * radius;
       star.style.transform = `translate(${x}px, ${y}px)`;
