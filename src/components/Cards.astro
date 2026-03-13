@@ -1,0 +1,70 @@
+<div class="cards">
+  <slot />
+</div>
+
+<style>
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .cards :global(details.card) {
+    background-color: #f0f0f0;
+    border-radius: 0.75rem;
+    text-align: left;
+  }
+
+  .cards :global(details.card summary) {
+    padding: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cards :global(details.card summary::-webkit-details-marker) {
+    display: none;
+  }
+
+  .cards :global(details.card summary::after) {
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .cards :global(details.card[open] summary::after) {
+    content: "\2212";
+  }
+
+  .cards :global(details.card summary h3) {
+    margin: 0;
+    font-size: 1.125rem;
+  }
+
+  .cards :global(.card-content) {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .cards :global(.card-content p) {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .cards :global(.card-content p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .cards :global(.card-content ul) {
+    margin: 0.25rem 0 0.75rem;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

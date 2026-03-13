@@ -1,5 +1,6 @@
 ---
 import Actions from './Actions.astro';
+import Cards from './Cards.astro';
 ---
 
 <section>
@@ -8,9 +9,9 @@ import Actions from './Actions.astro';
   <Actions actions={[
     { label: "Pay Fee", href: "https://ecole-westgate-school-parents-society.square.site/" },
   ]} />
-  <p><em>If the required fee is a barrier to your student's participation, please reach out to Mme Julie at jamuhlberger@cbe.ab.ca. All students will be included in the Farewell Day event.</em></p>
+  <p><em>If the required fee is a barrier to your student's participation, please reach out to Mme Julie at <a href="mailto:jamuhlberger@cbe.ab.ca">jamuhlberger@cbe.ab.ca</a>. All students will be included in the Farewell Day event.</em></p>
 
-  <div class="cards">
+  <Cards>
     <details class="card">
       <summary><h3>Legacy Gift</h3></summary>
       <div class="card-content">
@@ -51,10 +52,15 @@ import Actions from './Actions.astro';
         <p>Thank you in advance for helping us make this a memorable celebration for our Grade 6 students! We will share by email when this link live. </p>
       </div>
     </details>
-  </div>
+  </Cards>
 </section>
 
 <style>
+  section {
+    margin-top: 2rem;
+    padding-bottom: 0;
+  }
+
   h2 {
     font-family: "Bevan", serif;
     font-weight: 400;
@@ -63,67 +69,9 @@ import Actions from './Actions.astro';
     margin: 0;
   }
 
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .card {
-    background-color: #f0f0f0;
-    border-radius: 0.75rem;
-    text-align: left;
-  }
-
-  .card summary {
-    padding: 1.5rem;
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .card summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .card summary::after {
-    content: "+";
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 1;
-    transition: transform 0.2s ease;
-  }
-
-  .card[open] summary::after {
-    content: "\2212";
-  }
-
-  .card summary h3 {
-    margin: 0;
-    font-size: 1.125rem;
-  }
-
-  .card-content {
-    padding: 0 1.5rem 1.5rem;
-  }
-
-  .card-content p {
-    margin: 0 0 0.75rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .card-content p:last-child {
-    margin-bottom: 0;
-  }
-
-  .card-content ul {
-    margin: 0.25rem 0 0.75rem;
-    padding-left: 1.25rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+  p {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
