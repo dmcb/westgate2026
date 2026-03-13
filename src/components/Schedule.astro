@@ -1,21 +1,22 @@
 <section>
   <div class="marquee">
-  <h2><span>Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span><span aria-hidden="true">Event Schedule</span></h2>
+  <h2><span>Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span><span aria-hidden="true">Thursday June 25<sup>th</sup></span></h2>
   </div>
   <ul>
-    <li><h3>9-10am</h3> <p>Assembly <em>arrival between 8:45 and 8:55am</em> </p><span class="audience">Kids and Parents</span></li>
-    <li><h3>10-10:30am</h3> <p>Pics with parents <em>in gym and outside on North side of school</em></p><span class="audience">Kids and Parents</span></li>
-    <li><h3>10:30-11:30am</h3> <p>Snack and games <em>kids bring themselves, organize backpacks and leave personal items in classroom, if it's nice outside, spike ball, Jenga, nine square / if it's raining, we will transfer to the gym</em></p><span class="audience">Kids Only</span></li>
-    <li><h3>11:30am-1:30pm</h3> <p>Dance / Pizza / Candy Concession <em>includes vegetarian and cheese pizzas</em></p><span class="audience">Kids Only</span></li>
-    <li><h3>1:30-2:30pm</h3> <p>Outdoor Games / Water fight  <em>please bring towel and change of clothes</em></p><span class="audience">Kids Only</span></li>
+    <li><h3>9-10am</h3> <p class="title">Assembly</p><p class="details">Arrival between 8:45 and 8:55am.</p><span class="audience">Kids and Parents</span></li>
+    <li><h3>10-10:30am</h3> <p class="title">Pics with parents</p><p class="details">In gym and outside on North side of school.</p><span class="audience">Kids and Parents</span></li>
+    <li><h3>10:30-11:30am</h3> <p class="title">Snack and games</p><p class="details">Kids bring themselves, organize backpacks and leave personal items in classroom, if it's nice outside, spike ball, Jenga, nine square / if it's raining, we will transfer to the gym.</p><span class="audience">Kids Only</span></li>
+    <li><h3>11:30am-1:30pm</h3> <p class="title">Dance / Pizza / Candy Concession</p><p class="details">It’s Glow Time! This year’s theme is Glow in the Dark - come in your brightest neon’s, or glow in the dark outfits. Let’s Glow Crazy!</p><p class="details">Includes vegetarian and cheese pizzas.</p><span class="audience">Kids Only</span></li>
+    <li><h3>1:30-2:30pm</h3> <p class="title">Outdoor Games / Water fight</p><p class="details">Please bring towel and change of clothes.</p><span class="audience">Kids Only</span></li>
   </ul>
 </section>
 
 <style>
   section {
-    margin-top: clamp(3rem, 10vw, 6rem);
+    margin-top: clamp(2rem, 6vw, 4rem);
     max-width: none;
     color: #fff;
+    padding: 0;
   }
 
   .marquee {
@@ -39,10 +40,15 @@
     animation: marquee 30s linear infinite alternate;
     padding: 0;
     margin: 0;
+    font-size: 1.5em;
   }
 
   h2 span {
     white-space: nowrap;
+  }
+
+  sup {
+    font-size: 0.5em;
   }
 
   ul {
@@ -97,7 +103,11 @@
     margin-right: auto;
   }
 
-  em {
+  p.title {
+    font-size: 1.325em;
+  }
+
+  p.details {
     display: block;
     margin-top: 1rem;
     opacity: 0.7;

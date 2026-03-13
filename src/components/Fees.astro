@@ -1,0 +1,129 @@
+---
+import Actions from './Actions.astro';
+---
+
+<section>
+  <h2>Fee Information</h2>
+  <p>$20 Farewell Fee which includes yearbook, lunch, swag bag and all farewell day activities.</p>
+  <Actions actions={[
+    { label: "Pay Fee", href: "https://ecole-westgate-school-parents-society.square.site/" },
+  ]} />
+  <p><em>If the required fee is a barrier to your student's participation, please reach out to Mme Julie at jamuhlberger@cbe.ab.ca. All students will be included in the Farewell Day event.</em></p>
+
+  <div class="cards">
+    <details class="card">
+      <summary><h3>Legacy Gift</h3></summary>
+      <div class="card-content">
+        <p>A Legacy Gift is a special contribution from the graduating Grade 6 class that leaves a lasting mark on the school. Each year, students choose a meaningful gift that future students can enjoy. It's a way for the graduating class to say thank you to Westgate and leave behind something that will be remembered for years to come.</p>
+        <p>Previous Legacy Gifts:</p>
+        <ul>
+          <li>Funds to support paying fees for families in need within the school</li>
+          <li>Board game cart for indoor recess</li>
+          <li>Library pet</li>
+          <li>Gaga ball pit</li>
+        </ul>
+      </div>
+    </details>
+    <details class="card">
+      <summary><h3>Farewell Fundraising</h3></summary>
+      <div class="card-content">
+        <p>We have currently raised approximately $2,600.00 from Texas doughnut and coffee orders. The proceeds from these fundraisers go directly to support this year's Grade 6 Farewell.</p>
+        <p>We have one more Texas doughnut fundraiser on Thursday May 12th, submit your order on Healthy Hunger by <strong>Monday May 4th</strong>.</p>
+      </div>
+    </details>
+    <details class="card">
+      <summary><h3>Donations</h3></summary>
+      <div class="card-content">
+        <p>In May, we will share a link for families who would like to sign up to donate items to help support the Grade 6 Farewell Day activities. These donations help make the day extra fun for our students and are greatly appreciated.</p>
+        <p>Requested items may include:</p>
+        <ul>
+          <li>paper plates</li>
+          <li>napkins</li>
+          <li>pop cans (variety)</li>
+          <li>fruit trays</li>
+          <li>juice boxes</li>
+          <li>individual chip bags</li>
+          <li>veggie trays</li>
+          <li>cupcakes</li>
+          <li>jumbo freezies</li>
+          <li>small gift cards / prizes for dance trivia</li>
+        </ul>
+        <p>Thank you in advance for helping us make this a memorable celebration for our Grade 6 students! We will share by email when this link live. </p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<style>
+  h2 {
+    font-family: "Bevan", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin: 0;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .card {
+    background-color: #f0f0f0;
+    border-radius: 0.75rem;
+    text-align: left;
+  }
+
+  .card summary {
+    padding: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .card summary::after {
+    content: "+";
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .card[open] summary::after {
+    content: "\2212";
+  }
+
+  .card summary h3 {
+    margin: 0;
+    font-size: 1.125rem;
+  }
+
+  .card-content {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .card-content p {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .card-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .card-content ul {
+    margin: 0.25rem 0 0.75rem;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+</style>

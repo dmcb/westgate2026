@@ -1,0 +1,50 @@
+---
+interface Action {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  actions: Action[];
+}
+
+const { actions } = Astro.props;
+---
+
+<div class="actions">
+  {actions.map((action) => (
+    <a href={action.href}>{action.label} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+  ))}
+</div>
+
+<style>
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .actions a {
+    background-color: #008542;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    text-decoration: none;
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .actions a:hover {
+    transform: scale(1.1);
+  }
+
+  .actions a:active {
+    transform: scalex(1.2) scaley(.98);
+  }
+</style>
