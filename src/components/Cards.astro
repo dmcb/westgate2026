@@ -24,6 +24,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 0.75rem;
+  }
+
+  .cards :global(details.card summary:hover),
+  .cards :global(details.card summary:focus-visible),
+  .cards :global(details.card[open] summary) {
+    background-color: #e0e0e0;
   }
 
   .cards :global(details.card summary::-webkit-details-marker) {
@@ -48,7 +55,7 @@
   }
 
   .cards :global(.card-content) {
-    padding: 0 1.5rem 1.5rem;
+    padding: 1.5rem;
   }
 
   .cards :global(.card-content p) {
