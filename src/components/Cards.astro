@@ -54,6 +54,20 @@
     font-size: 1.125rem;
   }
 
+  .cards :global(details.card .card-reveal) {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 250ms ease;
+  }
+
+  .cards :global(details.card[open] .card-reveal) {
+    grid-template-rows: 1fr;
+  }
+
+  .cards :global(details.card .card-reveal > .card-content) {
+    overflow: hidden;
+  }
+
   .cards :global(.card-content) {
     padding: 1.5rem;
   }
